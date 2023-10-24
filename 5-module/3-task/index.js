@@ -20,19 +20,11 @@ function initCarousel() {
         currentOffset += inner.offsetWidth;
         currentSlide--;
       }
-      
+
       inner.style.transform = `translateX(${currentOffset}px)`;
 
-      if (currentSlide === 1) {
-        leftArrow.style.display = 'none';
-        rightArrow.style.display = '';
-      } else if (currentSlide === slides.length) {
-        rightArrow.style.display = 'none';
-        leftArrow.style.display = '';
-      } else {
-        leftArrow.style.display = '';
-        rightArrow.style.display = '';
-      }
+      leftArrow.style.display = currentSlide === 1 ? 'none' : '';
+      rightArrow.style.display = currentSlide === slides.length ? 'none' : '';
     }
   });
 }
